@@ -2,7 +2,7 @@ package com.example.bill;
 
 import com.example.pm.PriceMatrix;
 
-public class Billing_v1 {
+public class Billing_v1 implements Billing {
 
     private PriceMatrix priceMatrix; // dependency
 
@@ -11,7 +11,7 @@ public class Billing_v1 {
         System.out.println("-- BillingImpl instance created..");
     }
 
-   public double getTotalPrice(String[] cart) {
+    public double getTotalPrice(String[] cart) {
         double total = 0.0;
         for (String itemCode : cart) {
             total += priceMatrix.getPrice(itemCode);

@@ -1,2 +1,5 @@
-package com.example.bill;public interface Billing {
+package com.example.bill;
+
+public interface Billing {
+    double getTotalPrice(String[] cart);
 }

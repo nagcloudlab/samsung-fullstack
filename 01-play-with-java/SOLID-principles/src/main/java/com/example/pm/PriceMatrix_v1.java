@@ -1,9 +1,10 @@
+package com.example.pm;
 
-// user-defined data type (class)
-// class is a blueprint for objects
-// class is a template for objects
-// class is a design for objects
-public class PriceMatrix_v1 {
+public class PriceMatrix_v1 implements PriceMatrix {
+
+    public PriceMatrix_v1() {
+        System.out.println("-- PriceMatrix_v1 instance created..");
+    }
 
     public double getPrice(String itemCode) {
         // code to connect to DB and fetch price of the itemCode

@@ -1,0 +1,220 @@
+
+
+java-language learning path
+----------------------------
+
+1. built-in data types
+
+2. custom data types
+    - class
+    - interface
+    - enum (java 5)
+    - annotation (java 5)
+    - record (java 14)
+
+3. operators ( skip )
+    - arithmetic operators
+    - relational operators
+    - logical operators
+    - bitwise operators
+    - assignment operators
+    - conditional operators
+    - instanceof operator
+    - new operator
+    - (type) casting operator
+    - method invocation operator
+    - field access operator
+    - array access operator
+    - ternary operator
+
+4. control flow statements ( skip )
+    - if
+    - switch
+    - while
+    - do-while
+    - for
+    - break
+    - continue
+    - return
+
+
+5. object oriented programming
+    - class
+    - object
+    - inheritance
+    - polymorphism
+    - encapsulation
+    - abstraction
+    - association
+    - aggregation
+    - composition
+    - constructor
+    - method
+    - field
+    - package
+    - access modifier
+    - static keyword
+    - final keyword
+    - abstract keyword
+    - interface
+    - enum
+    - annotation
+    - record
+    - inner class
+    - nested class
+    - anonymous class
+
+
+6. data structure a.k.a collections
+   - built-in data structures
+   - custom data structures
+
+
+7. concurrent/parallel programming
+    - thread
+    - runnable
+    - thread pool
+    - executor
+    - future
+    - callable
+    - synchronized
+    - volatile
+    - wait-notify
+    - lock
+    - reentrant lock
+    - semaphore
+    - countdown latch
+    - cyclic barrier
+    - fork-join pool
+    - completable future
+    - parallel stream
+    - atomic
+    - concurrent collections
+    - thread local
+    - thread group
+    - thread factory
+    - thread interrupt
+    - thread join
+    - thread sleep
+    - thread yield
+    - thread priority
+    - thread daemon
+
+8. exception handling
+    - try-catch
+    - throw
+    - throws
+    - finally
+    - checked exception
+    - unchecked exception
+    - error
+    - exception
+    - runtime exception
+    - custom exception
+    - exception chaining
+    - exception propagation
+    - exception handling best practices
+
+
+9. Java core APIs
+
+    - java.lang
+    - java.util
+    - java.io
+    - java.nio
+    - java.net
+    - java.sql
+    - java.time
+    - java.util.concurrent
+    - java.util.stream
+    - java.util.regex
+    - java.util.logging
+    - java.util.zip
+    ...
+
+10. Java New features
+
+    - lambda expression
+    - functional interface
+    - default method
+    - static method
+    - method reference
+    - stream API
+    - optional
+    - functional programming
+    - functional programming best practices   
+    - var keyword (java 10)
+    - jshell (java 9)
+    - module system (java 9)
+    - reactive programming (java 9)
+    - pattern matching (java 12)
+    - switch expression (java 12)
+    - text block (java 13)
+    - records (java 14)
+    - sealed classes (java 15)
+
+11. design patterns
+    - creational patterns
+    - structural patterns
+    - behavioral patterns
+    - design principles
+    - design patterns best practices
+    - functional design patterns
+    - reactive design patterns
+    - concurrent design patterns
+    - distributed design patterns
+    - microservices design patterns
+    - cloud design patterns
+
+
+12. JVM performance tuning
+    - garbage collection
+    - heap memory
+    - stack memory
+    - metaspace
+    - class loader
+    - JIT compiler
+    - AOT compiler
+    - JFR
+    - JMC
+    - JMH
+    - Jconsole
+    - JvisualVM
+    - Jstat
+    - Jmap
+    - Jstack
+    - Jcmd
+    - JVM options
+    - JVM arguments
+    - JVM monitoring
+    - JVM profiling
+    - JVM tuning
+    - JVM best practices
+
+13. testing tools
+
+    - Junit
+    - TestNG
+    - Mockito
+    - PowerMock
+    - Jmock
+
+ 14. build tools
+
+    - Maven
+    - Gradle
+
+
+15. Libraries & Frameworks
+
+    - Spring with spring-boot
+    - Quarkus
+    - Micronaut
+    - Helidon
+    - Jakarta EE
+    - Hibernate
+    - JPA
+    - JAX-RS
+    - JAX-WS
+    - JMS
+    - Kafka
