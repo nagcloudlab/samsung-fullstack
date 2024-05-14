@@ -5,5 +5,7 @@
     <file url="file://$PROJECT_DIR$/01-SOLID-principles/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/02-OO-concepts/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/02-OO-concepts/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/03-OO-patterns/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/03-OO-patterns/src/main/resources" charset="UTF-8" />
   </component>
 </project>

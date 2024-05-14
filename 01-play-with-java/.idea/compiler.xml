@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="03-OO-patterns" />
         <module name="01-SOLID-principles" />
         <module name="02-OO-concepts" />
       </profile>
