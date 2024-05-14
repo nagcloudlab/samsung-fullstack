@@ -7,7 +7,7 @@
 ---
 
 myproject  
- |
+|
 |
 |--- p1 ( .java / .class )
 |
