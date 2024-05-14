@@ -19,6 +19,7 @@ OO concepts
 - abstraction
 - encapsulation
 - inheritance
+- polymorphism
 
 overriding
 - re-defining parent class method in child class
