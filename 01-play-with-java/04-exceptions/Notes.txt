@@ -1,0 +1,38 @@
+
+
+we have 2 types of throwables
+
+1. Exception
+
+    - Checked Exception
+    - Compile time exception
+    - We have to handle it
+    - Example: IOException, SQLException, ClassNotFoundException
+
+ 2. Error
+
+    - Unchecked Exception
+    - Runtime exception
+    - Not checked by compiler
+    - We can handle it
+    - Example: StackOverflowError, OutOfMemoryError, VirtualMachineError
+
+we have 2 types of exceptions
+
+1. Checked Exception
+
+    - Compile time exception
+    - Checked by compiler
+    - We have to handle it
+    - Example: IOException, SQLException, ClassNotFoundException
+
+2. Unchecked Exception
+
+    - Runtime exception
+    - Not checked by compiler
+    - We can handle it
+    - Example: ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException
+
+*/
+
+

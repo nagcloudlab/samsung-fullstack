@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/01-SOLID-principles/pom.xml" />
         <option value="$PROJECT_DIR$/02-OO-concepts/pom.xml" />
         <option value="$PROJECT_DIR$/03-OO-patterns/pom.xml" />
+        <option value="$PROJECT_DIR$/04-exceptions/pom.xml" />
       </list>
     </option>
   </component>
