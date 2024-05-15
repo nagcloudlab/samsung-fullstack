@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/02-OO-concepts/pom.xml" />
         <option value="$PROJECT_DIR$/03-OO-patterns/pom.xml" />
         <option value="$PROJECT_DIR$/04-exceptions/pom.xml" />
+        <option value="$PROJECT_DIR$/collections/pom.xml" />
+        <option value="$PROJECT_DIR$/05-collections/pom.xml" />
       </list>
     </option>
   </component>
