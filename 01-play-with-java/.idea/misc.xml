@@ -14,6 +14,8 @@
         <option value="$PROJECT_DIR$/05-collections/pom.xml" />
         <option value="$PROJECT_DIR$/06-FP/pom.xml" />
         <option value="$PROJECT_DIR$/06-functional-programming/pom.xml" />
+        <option value="$PROJECT_DIR$/07-stream-api/pom.xml" />
+        <option value="$PROJECT_DIR$/08-annotations/pom.xml" />
       </list>
     </option>
   </component>
