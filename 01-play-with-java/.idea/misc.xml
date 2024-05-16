@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/04-exceptions/pom.xml" />
         <option value="$PROJECT_DIR$/collections/pom.xml" />
         <option value="$PROJECT_DIR$/05-collections/pom.xml" />
+        <option value="$PROJECT_DIR$/06-FP/pom.xml" />
+        <option value="$PROJECT_DIR$/06-functional-programming/pom.xml" />
       </list>
     </option>
   </component>

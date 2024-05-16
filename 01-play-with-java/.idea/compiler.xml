@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="04-exceptions" />
         <module name="03-oo-patterns" />
+        <module name="06-functional-programming" />
         <module name="02-oo-concepts" />
         <module name="05-collections" />
         <module name="01-solid-principles" />
