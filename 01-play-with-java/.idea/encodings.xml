@@ -17,5 +17,7 @@
     <file url="file://$PROJECT_DIR$/07-stream-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/08-annotations/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/08-annotations/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/09-MT-basics/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/09-MT-basics/src/main/resources" charset="UTF-8" />
   </component>
 </project>

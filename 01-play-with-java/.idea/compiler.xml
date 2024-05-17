@@ -11,6 +11,7 @@
         <module name="07-stream-api" />
         <module name="04-exceptions" />
         <module name="08-annotations" />
+        <module name="09-MT-basics" />
         <module name="02-oo-concepts" />
         <module name="05-collections" />
         <module name="01-solid-principles" />
