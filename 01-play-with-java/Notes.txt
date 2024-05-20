@@ -1,0 +1,39 @@
+
+
+
+build
+------
+
+=> preparing the source code for production deployment
+
+build steps:
+
+0. clean the workspace
+
+1. install dependencies
+2. verify directory structure
+3. compile the source code
+4. run tests
+5. generate documentation
+6. generate production artifacts (e.g. minified files, etc.)
+7. generate a production-ready package (e.g. a zip file, etc.)
+8. create docker image
+9. push docker image to a registry
+
+
+automated build
+----------------
+
+how ?
+-> using build tools
+    - MAVEN -> XML based
+    - GRADLE -> GROOVY based
+
+What is MAVEN ?
+
+- a build tool
+- a dependency management tool
+- a project management tool
+
+
+    
