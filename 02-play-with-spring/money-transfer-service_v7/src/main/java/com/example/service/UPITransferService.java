@@ -1,9 +1,9 @@
 package com.example.service;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.entity.Account;
 import com.example.repository.AccountRepository;
@@ -19,16 +19,14 @@ import com.example.repository.AccountRepository;
 @Component("transferService")
 public class UPITransferService implements TransferService {
 
-    private static final Logger log = Logger.getLogger("money-transfer-service"); // singleton
     private AccountRepository accountRepository;
 
     @Autowired
     public UPITransferService(@Qualifier("jdbcAccountRepository") AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
-        log.info(accountRepository.getClass().getName() + " instance injected to UPITransferService");
-        log.info("UPITransferService instance created");
     }
 
+    @Transactional(transactionManager = "transactionManager")
     public void transfer(String sourceAccountNumber, String targetAccountNumber, double amount) {
 
         // logging
@@ -38,24 +36,30 @@ public class UPITransferService implements TransferService {
         // metrics
         // exception handling
 
-        log.info("transferring amount: " + amount + " from account: " + sourceAccountNumber + " to account: "
-                + targetAccountNumber);
         // implementation
         // ...
         // step-1 : load source account
         Account sourceAccount = accountRepository.loadAccount(sourceAccountNumber);
         // step-2 : load target account
         Account targetAccount = accountRepository.loadAccount(targetAccountNumber);
+
+        // boolean isSufficientBalance = true;
+        // if (!isSufficientBalance)
+        // throw new RuntimeException("Insufficient balance");
+
         // step-3 : debit source account
         sourceAccount.setBalance(sourceAccount.getBalance() - amount);
         // step-4 : credit target account
         targetAccount.setBalance(targetAccount.getBalance() + amount);
         // step-5 : update source account
         accountRepository.updateAccount(sourceAccount);
+
+        boolean b = true;
+        if (b)
+            throw new RuntimeException("Simulating runtime exception");
+
         // step-6 : update target account
         accountRepository.updateAccount(targetAccount);
-
-        log.info("transfer successful");
 
     }
 

@@ -1,0 +1,9 @@
+'
+
+1. Without SOLID principles ( v1 )
+2. With SOLID principles ( v2 )
+3. Spring with XML configuration ( v3 )
+4. Spring with Annotation configuration ( v4 )
+5. Spring with Java configuration ( v5 )
+6. Spring with AOP ( v6 )
+7. Spring with JDBC ( v7 ) ( intention: to show pain of manual-configuration )
