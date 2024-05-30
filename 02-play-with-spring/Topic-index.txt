@@ -1,0 +1,19 @@
+
+
+Spring & Spring Boot
+----------------------
+
+Topics
+
+v1. Without SOLID principles 
+v2. With SOLID principles 
+v3. Spring with XML configuration 
+v4. Spring with Annotation configuration 
+v5. Spring with Java configuration 
+v6. Spring with Aspect Oriented Programming 
+v7. Spring with JDBC 
+v8. Spring with JPA 
+v9. Spring with spring-boot ( Auto configuration )
+
+
+

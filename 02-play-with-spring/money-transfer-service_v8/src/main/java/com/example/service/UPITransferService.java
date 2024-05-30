@@ -22,11 +22,11 @@ public class UPITransferService implements TransferService {
     private AccountRepository accountRepository;
 
     @Autowired
-    public UPITransferService(@Qualifier("jdbcAccountRepository") AccountRepository accountRepository) {
+    public UPITransferService(@Qualifier("jpaAccountRepository") AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 
-    @Transactional(transactionManager = "transactionManager")
+    @Transactional(transactionManager = "jpaTransactionManager")
     public void transfer(String sourceAccountNumber, String targetAccountNumber, double amount) {
 
         // logging
