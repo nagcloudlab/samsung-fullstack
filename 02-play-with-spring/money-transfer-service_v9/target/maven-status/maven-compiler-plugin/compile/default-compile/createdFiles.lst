@@ -1,0 +1,9 @@
+auto/config/MyAutoConfiguration.class
+com/example/service/TransferService.class
+com/example/config/MySQLDataSourceConfiguration.class
+com/example/aspects/LoggingAspect.class
+com/example/service/UPITransferService.class
+com/example/Application.class
+com/example/repository/JpaAccountRepository.class
+com/example/repository/AccountRepository.class
+com/example/entity/Account.class

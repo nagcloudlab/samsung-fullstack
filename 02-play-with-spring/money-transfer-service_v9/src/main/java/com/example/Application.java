@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.example.service.TransferService;
@@ -12,9 +13,13 @@ import com.example.service.TransferService;
 // @EnableAutoConfiguration
 // @ComponentScan(basePackages = "com.example")
 // or
+// @Import({
+// CustomAutoConguration.class
+// })
 @SpringBootApplication
 @EntityScan(basePackages = "com.example.entity")
 @EnableTransactionManagement
+@PropertySource("classpath:foo.properties")
 public class Application {
 
     public static void main(String[] args) {
@@ -35,8 +40,13 @@ public class Application {
         System.out.println("-".repeat(100));
 
         TransferService transferService = applicationContext.getBean("transferService", TransferService.class);
-        System.out.println("transferService: " + transferService.getClass().getName());
+        System.out.println("transferService: " +
+                transferService.getClass().getName());
         transferService.transfer("1234-5", "1234-6", 100.0);
+
+        // String bean1 = applicationContext.getBean("bean1", String.class);
+        // System.out.println("bean1: " + bean1);
+
         // -----------------------------------------
         // 3. shutdown phase
         // -----------------------------------------

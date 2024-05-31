@@ -14,6 +14,7 @@ v6. Spring with Aspect Oriented Programming
 v7. Spring with JDBC 
 v8. Spring with JPA 
 v9. Spring with spring-boot ( Auto configuration )
+v10. Money Transfer Application with Spring Boot
 
 
 
