@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="money-transfer-service-v9" />
+        <module name="money-transfer-service-v6" />
+        <module name="money_transfer_system_v10 (1)" />
+        <module name="money-transfer-service-v5" />
+        <module name="money-transfer-service-v8" />
+        <module name="money-transfer-service-v7" />
+        <module name="money_transfer_system_v10" />
+        <module name="money-transfer-service-v4" />
+        <module name="money-transfer-service-v3" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="money-transfer-service-v9" options="-parameters" />
+      <module name="money_transfer_system_v10" options="-parameters" />
+      <module name="money_transfer_system_v10 (1)" options="-parameters" />
+    </option>
+  </component>
+</project>
