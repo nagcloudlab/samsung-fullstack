@@ -1,9 +1,0 @@
-/home/nag/samsung-fullstack/02-play-with-spring/money-transfer-service_v9/src/main/java/auto/config/MyAutoConfiguration.java
-/home/nag/samsung-fullstack/02-play-with-spring/money-transfer-service_v9/src/main/java/com/example/Application.java
-/home/nag/samsung-fullstack/02-play-with-spring/money-transfer-service_v9/src/main/java/com/example/aspects/LoggingAspect.java
-/home/nag/samsung-fullstack/02-play-with-spring/money-transfer-service_v9/src/main/java/com/example/config/MySQLDataSourceConfiguration.java
-/home/nag/samsung-fullstack/02-play-with-spring/money-transfer-service_v9/src/main/java/com/example/entity/Account.java
-/home/nag/samsung-fullstack/02-play-with-spring/money-transfer-service_v9/src/main/java/com/example/repository/AccountRepository.java
-/home/nag/samsung-fullstack/02-play-with-spring/money-transfer-service_v9/src/main/java/com/example/repository/JpaAccountRepository.java
-/home/nag/samsung-fullstack/02-play-with-spring/money-transfer-service_v9/src/main/java/com/example/service/TransferService.java
-/home/nag/samsung-fullstack/02-play-with-spring/money-transfer-service_v9/src/main/java/com/example/service/UPITransferService.java

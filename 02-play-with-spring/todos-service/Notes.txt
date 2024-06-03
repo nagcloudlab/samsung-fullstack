@@ -1,0 +1,167 @@
+
+----------------------------------------
+steps to implement a feature/module
+----------------------------------------
+
+1.identify data model(s) & relationships
+
+    - todo ( id,title,completed)
+    - user (id,name,email)
+
+2. layer(s)
+
+    a. data / repository layer  ==> persistencce logic
+
+        - TodoRepository
+        - UserRepository
+
+    b. service layer ==> processing / business logic
+
+        - TodoService
+        - UserService
+
+    c. controller( web / api ) layer ==> request/response logic
+
+        - TodoController
+        - UserController
+
+    d. view layer ==> presentation logic
+
+        - TodoView
+        - UserView
+
+    e. infra layer
+
+        - db
+        - cache
+        - mq
+        - email
+        - sms
+        - payment
+        - notification
+        - logging
+        - security
+        - monitoring
+        - testing
+        - deployment
+        - ci/cd
+        - cloud
+        - ...
+
+----------------------------------------
+steps to design & implement REST API
+----------------------------------------
+
+1. know the resources
+
+    - todo ( id,title,completed)
+    - user (id,name,email)
+
+2. know the relationships between resources
+
+    - todo has a user
+    - user has many todos
+
+3. design URIs
+
+    - GET /api/todos
+    - POST /api/todos
+    - GET /api/todos/{id}
+    - PUT /api/todos/{id}
+    - DELETE /api/todos/{id}
+
+    - GET /api/users
+    - POST /api/users
+    - GET /api/users/{id}
+    - PUT /api/users/{id}
+    - DELETE /api/users/{id}
+
+    - GET /api/todos/{id}/user
+    - GET /api/users/{id}/todos
+    - GET /api/users/{id}/todos
+
+4. choose resources representation
+
+    - JSON
+    - XML
+    - HTML
+    - CSV
+    - PDF
+    - ...
+
+5. choose HTTP methods
+
+    - read
+
+        - GET => read resource payload
+        - HEAD => read resource metadata
+        - OPTIONS => read resource options  ( allowed methods, allowed headers, allowed origins, ...)
+
+    - write
+
+        - POST => create resource
+        - PUT => update resource
+        - PATCH => partial update resource
+        - DELETE => delete resource
+
+
+
+6. choose status codes
+
+    - 2xx => success
+    - 3xx => redirection
+    - 4xx => client error
+    - 5xx => server error
+
+    - 200 => OK
+    - 201 => Created
+    - 202 => Accepted
+    - 204 => No Content
+
+    - 400 => Bad Request
+    - 401 => Unauthorized
+    - 403 => Forbidden
+    - 404 => Not Found
+    - 405 => Method Not Allowed
+    - 406 => Not Acceptable
+    - 415 => Unsupported Media Type
+
+    - 500 => Internal Server Error
+    - 501 => Not Implemented
+    - 503 => Service Unavailable
+
+
+  ------------------------------------------------
+
+
+  Over Http protocol, with URI
+
+  with HTTP methods & status codes,
+
+  if you design request & response messages,
+
+  then it is called REST API    
+
+  implementation of REST API is called RESTful API
+
+------------------------------------------------  
+
+
+how to impleemnt REST API, being Java developer,
+
+2 choices
+
+1. JAX-RS ( Java API for RESTful Web Services )
+
+    - standard API
+    - part of Java EE / Jakarta EE
+    - developed by Sun Microsystems
+    - implemented by Jersey, RestEasy, Apache CXF, ...
+
+2. Spring Web MVC
+
+    - part of Spring Framework
+    - developed by Pivotal Software
+    - implemented by Spring Boot, Spring Cloud, ...
+
+------------------------------------------------    

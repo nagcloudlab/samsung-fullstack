@@ -1,0 +1,18 @@
+
+
+
+JPA
+-----
+
+    -> ORM specification ( interface )
+
+    implementation(s)
+
+        -> Hibernate
+        -> MyBatis
+        -> EclipseLink
+        -> OpenJPA
+        -> TopLink
+        -> DataNucleus
+        -> ObjectDB
+        ...
