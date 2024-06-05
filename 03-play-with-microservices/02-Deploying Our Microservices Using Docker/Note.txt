@@ -1,0 +1,9 @@
+
+
+steps to containerize the microservices
+
+step-1 : create a dockerfile in the root of the project
+step-2 : build the docker image
+step-3 : push the docker image to docker  registry ( optional )
+step-4 : pull the docker image from docker registry ( optional )
+step-5 : run the docker image ( container )

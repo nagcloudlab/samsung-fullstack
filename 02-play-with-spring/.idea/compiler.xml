@@ -6,21 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="money-transfer-service_v9" />
-        <module name="money-transfer-service_v7" />
-        <module name="money-transfer-service_v8" />
-        <module name="money-transfer-service_v5" />
-        <module name="money-transfer-service_v6" />
-        <module name="money_transfer_system_v11" />
-        <module name="money-transfer-service_v3" />
-        <module name="money_transfer_system_v10" />
-        <module name="money-transfer-service_v4" />
-        <module name="money-transfer-service_v1" />
-        <module name="money-transfer-service_v2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="money-transfer-service_v1" target="17" />
+      <module name="money-transfer-service_v2" target="17" />
+      <module name="money-transfer-service_v3" target="17" />
+      <module name="money-transfer-service_v4" target="17" />
+      <module name="money-transfer-service_v5" target="17" />
+      <module name="money-transfer-service_v6" target="17" />
+      <module name="money-transfer-service_v7" target="17" />
+      <module name="money-transfer-service_v8" target="17" />
+      <module name="money-transfer-service_v9" target="17" />
+      <module name="money_transfer_system_v10" target="17" />
       <module name="money_transfer_system_v10 (1)" target="17" />
+      <module name="money_transfer_system_v11" target="17" />
+      <module name="security-quickstart" target="17" />
+      <module name="todos-service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -29,6 +31,8 @@
       <module name="money_transfer_system_v10" options="-parameters" />
       <module name="money_transfer_system_v10 (1)" options="-parameters" />
       <module name="money_transfer_system_v11" options="-parameters" />
+      <module name="security-quickstart" options="-parameters" />
+      <module name="todos-service" options="-parameters" />
     </option>
   </component>
 </project>
