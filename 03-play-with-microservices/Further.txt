@@ -1,0 +1,15 @@
+
+
+- centralized logging
+- tracing
+- monitoring
+- alerting
+- metrics
+
+--------------------------------------------------------
+
+- JVM vs GraalVM
+- How to tune JVM
+- How to build cloud native applications with Spring Boot Native Image
+
+--------------------------------------------------------
