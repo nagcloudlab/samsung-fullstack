@@ -1,0 +1,64 @@
+
+
+
+Why we need javascript?
+
+ -> to build interactive websites
+ -> ro build server side applications
+ -> to build mobile applications
+ -> to build desktop applications
+ -> to build command line tools
+
+
+What makes javascript unique?
+
+  -> dynamically typed language
+  -> single threaded language, highly concurrent with non blocking IO
+
+
+ How to run javascript code?
+  -> javascript is interpreted language, we need a javascript engine to run the code
+
+ browser
+
+    1. chrome -> v8 engine ( c++ )
+    2. firefox -> spider monkey ( c++ )
+    3. safari -> nitro ( c++ )
+    4. edge -> chakra ( c++ )
+
+ other envi
+
+    1. nodejs -> v8 engine ( c++ )   
+    2. JVM -> nashorn ( java )
+    3. ...
+  
+  note : javascript engine is based on ECMAScript standard spec
+
+-----------------------------------------------------
+Hello World in javascript
+
+  console.log('Hello World');
+
+-----------------------------------------------------
+
+
+topics:
+
+level-1:
+
+- data types
+- execution context aka scope
+- FP
+- OOP ( less focus )
+- function binding
+
+level-2:
+
+- Es6 and beyond
+
+level-3:
+
+- async programming
+- testing
+- build tools
+- event loop
