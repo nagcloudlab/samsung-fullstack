@@ -1,0 +1,53 @@
+
+
+
+.js development without modules 
+
+    -> global namespace pollution
+    -> load order dependencies
+
+.js development with module standard
+
+
+    from third-party 
+
+        -> AMD (Asynchronous Module Definition) ( out of date )
+        -> CommonJS ( popular )
+
+
+CommonJS rules
+
+1. Each file is its own module
+2. variable/function defined in a module are private to that module
+3. to make a variable/function available outside the module, 
+   it must be explicitly exported by module.export object
+4. to import a variable/function from another module, 
+   it must be explicitly imported into the module using require() function
+5. group related modules into a package (folder) with a package.json file
+
+
+Node.js uses CommonJS module standard as default module system
+
+
+NPM ( Node Package Manager )
+
+    -> cli tool
+    -> package manager for Node.js
+    -> install, update, remove packages
+    -> manage dependencies
+    -> share packages with others
+    -> npmjs.com ( public registry of packages )
+
+
+ESM ( ECMAScript Module )
+
+    -> native module system in JavaScript
+    -> import/export keywords
+    -> browser support is limited
+    -> Node.js support is experimental
+
+
+Asynchronous
+
+    - promise
+    - rxjs
