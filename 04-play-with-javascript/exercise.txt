@@ -1,0 +1,16 @@
+
+
+console todos application
+---------------------------
+
+
+    - Add a new todo
+    - Remove a todo
+    - List all todos
+    - Edit a todo
+    - Complete All
+    - Mark a todo as completed
+    - Clear all completed todos
+    - List all completed todos
+    - List all uncompleted todos
+    - List all todos by priority
