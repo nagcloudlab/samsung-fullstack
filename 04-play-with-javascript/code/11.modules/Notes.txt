@@ -39,15 +39,15 @@ NPM ( Node Package Manager )
     -> npmjs.com ( public registry of packages )
 
 
+in browser, we can use CommonJS module system 
+with the help of bundlers like Webpack, Browserify, Rollup
+
+
+
 ESM ( ECMAScript Module )
 
-    -> native module system in JavaScript
+    -> built-in module system in JavaScript
     -> import/export keywords
+    -> static module system ( import/export at the top of the file )
     -> browser support is limited
     -> Node.js support is experimental
-
-
-Asynchronous
-
-    - promise
-    - rxjs
