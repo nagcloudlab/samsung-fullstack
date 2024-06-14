@@ -1,0 +1,119 @@
+
+
+--------------------------------------------
+
+UI = data + style + interaction
+Web UI = HTML + CSS + JS
+
+--------------------------------------------
+
+using browser's Apis, javascript programs can bring life to static HTML pages
+
+browser's Apis: -> w3c recommendations, implemented by browser vendors,
+abstracted to us as javascript objects and functions
+
+e.g DOM,XHR,timer,..
+
+using DOM api
+------------------
+-> to create/update/delete HTML elements
+-> to update inner content of HTML elements
+-> to update style of HTML elements
+-> to listen event on HTML elements
+-> to validate form data
+
+using XHR api / fetch api
+--------------------------
+-> to communicate with server
+
+using timer api
+----------------
+-> to execute some code after some time interval
+
+using storage api
+-----------------
+-> to store data on client machine
+
+using canvas api
+----------------
+-> to draw graphics
+..
+
+https://developer.mozilla.org/en-US/docs/Web/API
+
+
+---------------------------------------------------------------
+complexities working with browser's apis directly using javascript
+----------------------------------------------------------------
+
+-> browser compatibility
+-> writing more code
+-> memory leaks
+-> performance issues
+-> code maintainability
+-> code reusability
+
+
+---------------------------------------------------------------
+to overcome above complexities, legacy solutions
+---------------------------------------------------------------
+
+
+-> using server-side frameworks
+    -> JSP,ASP,PHP,..
+    -> server-side frameworks generate HTML pages with data
+    -> browser just renders the HTML pages
+
+
+limitations of server-side frameworks
+
+-> on every request, server has to generate HTML pages, keeping client state,
+   makes servers high on load
+-> on every response, server has to send entire HTML page, makes network slow
+
+
+---------------------------------------------------------------
+to overcome above limitations, modern solutions (SPA)
+---------------------------------------------------------------
+
+SPA: Single Page Application
+
+how ?
+
+-> using modern browser's apis
+-> using modern javascript features
+-> using third-party libraries & frameworks
+
+
+---------------------------------------------------------------
+third-party libraries & frameworks
+---------------------------------------------------------------
+
+
+1. jQuery
+
+    -> browser compatibility on DOM & XHR apis
+    -> writing less code & do more
+
+
+mvc pattern based frameworks  ( outdated )
+------------------------------------------------
+
+1. backbone.js
+2. knockout.js
+3. dojo
+4. ext.js (sencha)
+5. ember.js
+6. angular.js
+....
+
+
+component based libraries & frameworks
+--------------------------------------
+
+1. react.js
+2. angular
+3. vue.js  ( our choice )
+...
+
+---------------------------------------------------------------
