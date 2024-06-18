@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       title: "shop-IT-v1",
-      currentTab: 1,
+      currentTab: 1, // state
       products: [
         {
           id: 1,
@@ -36,7 +36,6 @@ export default {
   },
 };
 </script>
-
 <template>
   <div class="container">
     <div class="display-1">{{ title }}</div>
