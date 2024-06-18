@@ -30,13 +30,6 @@ using timer api
 ----------------
 -> to execute some code after some time interval
 
-using storage api
------------------
--> to store data on client machine
-
-using canvas api
-----------------
--> to draw graphics
 ..
 
 https://developer.mozilla.org/en-US/docs/Web/API

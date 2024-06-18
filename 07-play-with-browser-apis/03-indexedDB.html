@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IndexedDB API Example</title>
+</head>
+
+<body>
+    <button onclick="initDB()">Initialize DB</button>
+    <button onclick="addData()">Add Data</button>
+    <button onclick="getData()">Get Data</button>
+    <p id="output"></p>
+
+    <script>
+        let db;
+
+        function initDB() {
+            const request = indexedDB.open('myDatabase', 1);
+
+            request.onupgradeneeded = function (event) {
+                db = event.target.result;
+                db.createObjectStore('myStore', { keyPath: 'id' });
+                alert('Database initialized.');
+            };
+
+            request.onsuccess = function (event) {
+                db = event.target.result;
+                alert('Database opened.');
+            };
+
+            request.onerror = function (event) {
+                alert('Database error: ' + event.target.errorCode);
+            };
+        }
+
+        function addData() {
+            const transaction = db.transaction(['myStore'], 'readwrite');
+            const objectStore = transaction.objectStore('myStore');
+            const request = objectStore.add({ id: Math.floor(Math.random() * 1000), name: 'John Doe' });
+
+            request.onsuccess = function (event) {
+                alert('Data added.');
+            };
+
+            request.onerror = function (event) {
+                alert('Error adding data: ' + event.target.errorCode);
+            };
+        }
+
+        function getData() {
+            const transaction = db.transaction(['myStore']);
+            const objectStore = transaction.objectStore('myStore');
+            const request = objectStore.get(1);
+
+            request.onsuccess = function (event) {
+                document.getElementById('output').textContent = JSON.stringify(request.result);
+            };
+
+            request.onerror = function (event) {
+                alert('Error getting data: ' + event.target.errorCode);
+            };
+        }
+    </script>
+</body>
+
+</html>

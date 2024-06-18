@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IndexedDB Complex Example</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contact Management</h1>
+    <form id="contactForm">
+        <input type="hidden" id="contactId">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <button type="submit">Save Contact</button>
+    </form>
+    <h2>Contacts</h2>
+    <table id="contactsTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        let db;
+
+        function initDB() {
+            const request = indexedDB.open('contactsDB', 1);
+
+            request.onupgradeneeded = function (event) {
+                db = event.target.result;
+                const objectStore = db.createObjectStore('contacts', { keyPath: 'contactId' });
+                objectStore.createIndex('name', 'name', { unique: false });
+                objectStore.createIndex('email', 'email', { unique: true });
+                alert('Database initialized.');
+            };
+
+            request.onsuccess = function (event) {
+                db = event.target.result;
+                loadContacts();
+            };
+
+            request.onerror = function (event) {
+                alert('Database error: ' + event.target.errorCode);
+            };
+        }
+
+        function addOrUpdateContact(contact) {
+            const transaction = db.transaction(['contacts'], 'readwrite');
+            const objectStore = transaction.objectStore('contacts');
+
+            if (contact.id) {
+                objectStore.put(contact);
+            } else {
+                objectStore.add(contact);
+            }
+
+            transaction.oncomplete = function () {
+                loadContacts();
+                document.getElementById('contactForm').reset();
+                document.getElementById('contactId').value = '';
+            };
+
+            transaction.onerror = function (event) {
+                alert('Error saving contact: ' + event.target.errorCode);
+            };
+        }
+
+        function deleteContact(id) {
+            const transaction = db.transaction(['contacts'], 'readwrite');
+            const objectStore = transaction.objectStore('contacts');
+            objectStore.delete(id);
+
+            transaction.oncomplete = function () {
+                loadContacts();
+            };
+
+            transaction.onerror = function (event) {
+                alert('Error deleting contact: ' + event.target.errorCode);
+            };
+        }
+
+        function loadContacts() {
+            const transaction = db.transaction(['contacts']);
+            const objectStore = transaction.objectStore('contacts');
+            const request = objectStore.getAll();
+
+            request.onsuccess = function (event) {
+                displayContacts(event.target.result);
+            };
+
+            request.onerror = function (event) {
+                alert('Error loading contacts: ' + event.target.errorCode);
+            };
+        }
+
+        function displayContacts(contacts) {
+            const tbody = document.getElementById('contactsTable').getElementsByTagName('tbody')[0];
+            tbody.innerHTML = '';
+
+            contacts.forEach(contact => {
+                const row = tbody.insertRow();
+                row.insertCell(0).textContent = contact.name;
+                row.insertCell(1).textContent = contact.email;
+                const actionsCell = row.insertCell(2);
+
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.onclick = function () {
+                    document.getElementById('contactId').value = contact.id;
+                    document.getElementById('name').value = contact.name;
+                    document.getElementById('email').value = contact.email;
+                };
+                actionsCell.appendChild(editButton);
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.onclick = function () {
+                    deleteContact(contact.id);
+                };
+                actionsCell.appendChild(deleteButton);
+            });
+        }
+
+        document.getElementById('contactForm').onsubmit = function (event) {
+            event.preventDefault();
+            const contact = {
+                id: document.getElementById('contactId').value ? Number(document.getElementById('contactId').value) : Math.floor(Math.random() * 100000),
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value
+            };
+            addOrUpdateContact(contact);
+        };
+
+        window.onload = function () {
+            initDB();
+        };
+    </script>
+</body>
+
+</html>

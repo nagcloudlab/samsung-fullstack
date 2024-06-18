@@ -1,0 +1,17 @@
+
+
+
+
+
+uses cases for local & session storage apis
+------------------------------------------------------
+
+
+1. Storing User Preferences
+2. Caching Data for Offline Use
+3. Maintaining User Sessions
+4. Saving Form Data
+5. Tracking User Progress
+6. Storing User History
+7. Saving User-Generated Content
+8. Storing User Credentials ( auth token)

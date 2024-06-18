@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Session Storage API Example</title>
+</head>
+
+<body>
+    <input type="text" id="dataInput" placeholder="Enter some data">
+    <button onclick="storeSessionData()">Store Session Data</button>
+    <button onclick="retrieveSessionData()">Retrieve Session Data</button>
+    <p id="output"></p>
+
+    <script>
+        function storeSessionData() {
+            const data = document.getElementById('dataInput').value;
+            sessionStorage.setItem('sessionData', data);
+            alert('Data stored in session storage!');
+        }
+
+        function retrieveSessionData() {
+            const data = sessionStorage.getItem('sessionData');
+            document.getElementById('output').textContent = data ? `Stored Data: ${data}` : 'No data found.';
+        }
+    </script>
+</body>
+
+</html>
