@@ -1,17 +1,17 @@
-
-
-
 <template>
   <div>
-    <!-- binding text -->
-    <div>{{ message }} by {{ name }}</div>
-    <!-- binding html -->
-    <div v-html="htmlMarkup"></div>
+    <!-- Binding Text -->
+    <div>{{ greet }} {{ name }}</div>
+
+    <!-- Binding HTML -->
+    <div v-html="channel"></div>
     <div v-html="hack"></div>
-    <!-- binding attributes -->
-    <div :id="'todo-' + todoId">Todo</div>
-    <button :disabled="!isAvailable">Click me</button>
-    <!-- binding class -->
+
+    <!-- Bidning Attributes -->
+    <h2 :id="headingId">Heading</h2>
+    <button :disabled="isDisabled">Bind</button>
+
+    <!-- Binding Classes -->
     <h2 class="underline">Underlined Text</h2>
     <h2 :class="status">Status</h2>
     <h2 class="underline" :class="status">Static Dynamic</h2>
@@ -30,9 +30,10 @@
     >
       Object Conditional Movie
     </h2>
-    <!-- binding inline-style -->
+
+    <!-- Binding Inline Styles -->
     <h2
-      v-bind:style="{
+      :style="{
         color: highlightColor,
         fontSize: headerSize + 'px',
         padding: '20px',
@@ -44,19 +45,19 @@
     <div :style="[baseStyleObject, successStyleObject]">Success Style</div>
     <div :style="[baseStyleObject, dangerStyleObject]">Danger Style</div>
 
-    <!-- conditional rendering -->
+    <!-- Conditional Rendering -->
     <h1 v-if="num === 0">The number is zero</h1>
     <h2 v-else-if="num < 0">The number is negative</h2>
     <h2 v-else-if="num > 0">The number is positive</h2>
     <h2 v-else>Not a number</h2>
-
-    <template v-if="isAvailable">
-      <h1>laptop</h1>
-      <h2>100.00</h2>
+    <template v-if="showElement">
+      <h2>Vishwas</h2>
+      <h2>Codevolution</h2>
+      <h2>Vue 3</h2>
     </template>
-    <h1 v-show="false">v-show</h1>
+    <h2 v-show="showElement">Using v-show</h2>
 
-    <!-- list rendering -->
+    <!-- List Rendering -->
     <h2 v-for="(name, index) in names" :key="name">{{ index }} {{ name }}</h2>
     <h2 v-for="name in fullNames" :key="name.first">
       {{ name.first }} {{ name.last }}
@@ -69,10 +70,14 @@
       {{ index }} {{ key }} {{ value }}
     </h2>
     <div v-for="name in names" :key="name">
-      <h2 v-if="name === 'nag'">{{ name }}</h2>
+      <h2>{{ name }}</h2>
+      <hr />
+    </div>
+    <div v-for="name in names" :key="name">
+      <h2 v-if="name === 'Bruce'">{{ name }}</h2>
     </div>
 
-    <!-- methods -->
+    <!-- Methods -->
     <h2>{{ 2 + 3 + 5 }}</h2>
     <h2>{{ 5 + 10 + 15 }}</h2>
     <h2>Add method - {{ add(2, 3, 5) }}</h2>
@@ -80,29 +85,29 @@
     <h2>Multiply method - {{ multiply(10) }}</h2>
     <h2>Multiply method - {{ multiply(baseValue) }}</h2>
 
-    <!-- event handling -->
-    <h1>{{ name }}</h1>
+    <!-- Event Handling -->
+    <h2>{{ name }}</h2>
     <div>
-      <!-- <button v-on:click="changeName($event, 'foo')">Change name</button>
-       -->
-      <button @click="changeName($event, 'foo')">Change name</button>
-      <h2>{{ count }}</h2>
-      <div>
-        <button @click="increment(1, $event)">Increment</button>
-        <button @click="decrement(1)">Decrement</button>
-        <button @click="increment(5)">Increment 5</button>
-        <button @click="decrement(5)">Decrement 5</button>
-      </div>
+      <button @click="changeName($event), increment(1, $event)">
+        Change name
+      </button>
     </div>
-    <hr />
-    <!-- form handling -->
+    <h2>{{ count }}</h2>
+    <div>
+      <button @click="increment(1, $event)">Increment</button>
+      <button @click="decrement(1)">Decrement</button>
+      <button @click="increment(5)">Increment 5</button>
+      <button @click="decrement(5)">Decrement 5</button>
+    </div>
+
+    <!-- Form Handling -->
     <div>
       <pre>
       {{ JSON.stringify(formValues, null, 2) }}
     </pre
       >
     </div>
-    <form>
+    <form @submit.prevent="submitForm">
       <div>
         <label for="name">Name</label>
         <input type="text" id="name" v-model.trim="formValues.name" />
@@ -202,12 +207,12 @@
       </div>
     </form>
 
+    <!-- Bonus Directives -->
     <h2 v-once>{{ name }}</h2>
-    <h2>{{ name }}</h2>
     <button @click="name = 'Batman'">Change name</button>
+    <h2 v-pre>{{ name }}</h2>
 
-    <!-- computed properties -->
-
+    <!-- Computed Properties -->
     <h2>Fullname - {{ firstName }} {{ lastName }}</h2>
     <h2>Fullname - {{ fullName }}</h2>
     <h2>
@@ -219,157 +224,267 @@
     <button @click="items.push({ id: 4, title: 'Keyboard', price: 50 })">
       Add item
     </button>
-    <hr />
     <div>
-      {{ country }}
       <input type="text" v-model="country" />
     </div>
+    <div v-for="item in items" :key="item.id">
+      <h2 v-if="item.id === 1">{{ item.title }} - {{ item.price }}</h2>
+    </div>
+    <h2 v-for="item in expensiveItems" :key="item.id">
+      {{ item.title }} - {{ item.price }}
+    </h2>
+    <button @click="changeFullName">Change fullname</button>
+
+    <!-- Watchers -->
+    <h2>Volume Tracker (0-20)</h2>
+    <h3>Current Volume - {{ volume }}</h3>
+    <div>
+      <button @click="volume += 2">Increase</button>
+      <button @click="volume -= 2">Decrease</button>
+    </div>
+    <input type="text" v-model="movie" />
+    <input type="text" v-model="movieInfo.title" />
+    <input type="text" v-model="movieInfo.actor" />
+    <button @click="movieList = movieList.concat(['Wonder Woman'])">
+      Add movie
+    </button>
   </div>
 </template>
-
 
 <script>
 export default {
   name: "App",
-  computed: {
-    fullName() {
-      return `${this.firstName} ${this.lastName}`;
-    },
-    total() {
-      console.log("total computed property called..");
-      return this.items.reduce(
-        (total, curr) => (total = total + curr.price),
-        0
-      );
-    },
-  },
-  methods: {
-    getTotal() {
-      console.log("getTotal method called..");
-      return this.items.reduce(
-        (total, curr) => (total = total + curr.price),
-        0
-      );
-    },
-    increment(step, event) {
-      console.log(event);
-      this.count += step;
-    },
-    decrement(step) {
-      this.count -= step;
-    },
-    changeName(event, foo) {
-      // console.log("event handler called..");
-      // console.log(event);
-      // console.log(foo);
-      this.name = "Raj";
-    },
-    add(a, b, c) {
-      return a + b + c;
-    },
-    multiply(a) {
-      return a * this.baseValue;
-    },
-  },
   data() {
     return {
-      country: "India",
-      items: [
-        { id: 1, name: "laptop", price: 100 },
-        { id: 2, name: "mouse", price: 10 },
-        { id: 3, name: "keyboard", price: 50 },
-      ],
-      firstName: "Nag",
-      lastName: "N",
-      formValues: {
-        name: "",
-        profileSummary: "",
-        country: "india",
-        jobLocation: ["india"],
-        remoteWork: "no",
-        skillSet: [],
-        yearsOfExperience: "",
-        age: "null",
-      },
-      count: 0,
-      name: "Nag",
-      baseValue: 30,
-      myInfo: {
-        name: "Nag",
-        age: 35,
-        location: "India",
-      },
-      actors: [
-        {
-          name: "Tom Cruise",
-          movies: ["Mission Impossible", "Top Gun"],
-        },
-        {
-          name: "Brad Pitt",
-          movies: ["Fight Club", "Troy"],
-        },
-        {
-          name: "Leonardo DiCaprio",
-          movies: ["Titanic", "Inception"],
-        },
-      ],
-      fullNames: [
-        { first: "Nag", last: "Raj" },
-        { first: "Ram", last: "Raj" },
-        { first: "Sam", last: "Raj" },
-      ],
-      names: ["nag", "ram", "sam"],
-      num: "-1",
-      message: "Hello Vue!",
-      name: "nag",
-      htmlMarkup: "<h1>Markup</h1>",
+      name: "Vishwas",
+      greet: "Hello",
+      channel: "<b>Codevolution</b>",
       hack: `<a href="#" onclick="alert('You have been hacked!')">Win a prize!<a/>`,
-      todoId: 1,
-      isAvailable: false,
-      status: "active",
-      isPromoted: true,
-      soldOut: false,
-      highlightColor: "blue",
-      headerSize: 30,
+      headingId: "heading",
+      isDisabled: true,
+      status: "danger",
+      isPromoted: false,
+      isSoldOut: true,
+      highlightColor: "orange",
+      headerSize: 50,
       headerStyleObject: {
-        color: "purple",
-        fontSize: "40px",
-        padding: "10px",
+        color: "orange",
+        fontSize: "50px",
+        padding: "20px",
       },
       baseStyleObject: {
-        color: "black",
-        fontSize: "20px",
+        fontSize: "50px",
         padding: "10px",
       },
       successStyleObject: {
-        backgroundColor: "green",
+        color: "green",
+        backgroundColor: "lightgreen",
+        border: "1px solid green",
       },
       dangerStyleObject: {
+        color: "darkred",
         backgroundColor: "red",
+        border: "1px solid darkred",
       },
+      num: 1,
+      showElement: false,
+      names: ["Bruce", "Clark", "Diana"],
+      fullNames: [
+        { first: "Bruce", last: "Wayne" },
+        { first: "Clark", last: "Kent" },
+        { first: "Princess", last: "Diana" },
+      ],
+      actors: [
+        {
+          name: "Christian Bale",
+          movies: ["Batman", "American Psycho"],
+        },
+        {
+          name: "Di Caprio",
+          movies: ["Titanic", "Inception"],
+        },
+      ],
+      myInfo: {
+        name: "Vishwas",
+        channel: "Codevolution",
+        course: "Vue 3",
+      },
+      baseMultiplier: 5,
+      baseValue: 2,
+      count: 0,
+      formValues: {
+        name: "",
+        profileSummary: "",
+        country: "",
+        jobLocation: [],
+        remoteWork: "no",
+        skillSet: [],
+        yearsOfExperience: "",
+        age: null,
+      },
+      firstName: "Bruce",
+      lastName: "Wayne",
+      items: [
+        {
+          id: 1,
+          title: "TV",
+          price: 100,
+        },
+        {
+          id: 2,
+          title: "Phone",
+          price: 200,
+        },
+        {
+          id: 3,
+          title: "Laptop",
+          price: 300,
+        },
+      ],
+      country: "",
+      volume: 16,
+      movie: "batman",
+      movieInfo: {
+        title: "",
+        actor: "",
+      },
+      movieList: ["Batman", "Superman"],
     };
+  },
+  methods: {
+    add(a, b, c) {
+      return a + b + c;
+    },
+    multiply(num) {
+      return num * this.baseMultiplier;
+    },
+    increment(num, event) {
+      this.count += num;
+      console.log(event);
+    },
+    decrement(num) {
+      this.count -= num;
+    },
+    changeName(event) {
+      this.name = "Batman";
+      console.log("Event", event);
+    },
+    submitForm() {
+      console.log("form values", this.formValues);
+    },
+    getTotal() {
+      console.log("getTotal method");
+      return this.items.reduce(
+        (total, curr) => (total = total + curr.price),
+        0
+      );
+    },
+    changeFullName() {
+      this.fullName = "Clark Kent";
+    },
+  },
+  computed: {
+    fullName: {
+      get() {
+        return `${this.firstName} ${this.lastName}`;
+      },
+      set(value) {
+        const names = value.split(" ");
+        this.firstName = names[0];
+        this.lastName = names[1];
+      },
+    },
+    total() {
+      console.log("total computed property");
+      return this.items.reduce(
+        (total, curr) => (total = total + curr.price),
+        0
+      );
+    },
+    expensiveItems() {
+      return this.items.filter((item) => item.price > 100);
+    },
+  },
+  watch: {
+    volume: {
+      handler(newValue, oldValue) {
+        if (newValue > oldValue && newValue === 16) {
+          alert(
+            "Listening to a high volumne for a long time may damage your hearing"
+          );
+        }
+      },
+      immediate: true,
+    },
+    movie: {
+      handler(newValue) {
+        console.log(`Calling API with movie name = ${newValue}`);
+      },
+      immediate: true,
+    },
+    movieInfo: {
+      handler(newValue) {
+        console.log(
+          `Calling API with movie title = ${newValue.title} and actor = ${newValue.actor}`
+        );
+      },
+      deep: true,
+    },
+    movieList: {
+      handler(newValue) {
+        console.log(`Updated list ${newValue}`);
+      },
+      // deep: true,
+    },
   },
 };
 </script>
 
-
 <style>
-.sold-out {
-  color: red;
-}
-.new {
-  color: green;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-align: center; */
+  color: #2c3e50;
+  margin-top: 60px;
 }
 .underline {
   text-decoration: underline;
 }
-.active {
+.promoted {
+  font-style: italic;
+}
+.new {
+  color: olivedrab;
+}
+.sold-out {
   color: red;
 }
-.inactive {
-  color: tomato;
+label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
 }
-.promoted {
-  background-color: yellow;
+
+input + label {
+  font-weight: bold;
+  display: inline-flex;
+  margin-right: 20px;
+}
+
+input[type="text"],
+textarea,
+select {
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 </style>
