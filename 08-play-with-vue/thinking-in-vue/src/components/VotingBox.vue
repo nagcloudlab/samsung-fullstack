@@ -1,12 +1,13 @@
 
-<script setup>
+<script >
 import VotingItem from "./VotingItem.vue";
 import VotingTable from "./VotingTable.vue";
-</script>
-
-<script>
 export default {
   name: "VotingBox",
+  components: {
+    VotingItem,
+    VotingTable,
+  },
   data() {
     return {
       items: [
@@ -29,6 +30,7 @@ export default {
   },
 };
 </script>
+
 
 <template>
   <div class="card">

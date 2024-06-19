@@ -1,27 +1,23 @@
-<script setup>
-defineProps({
-  item: {
-    type: Object,
-    required: true,
-  },
-});
-</script>
 
 <script>
 export default {
   name: "VotingItem",
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+  },
+  emits: ["like", "dislike"],
   methods: {
     handleLike(item) {
       // emit an event to the parent component
-      console.log("Like clicked");
       this.$emit("like", item);
     },
     handleDislike(item) {
-      console.log("Dislike clicked");
       this.$emit("dislike", item);
     },
   },
-  // emits: ["like", "dislike"],
 };
 </script>
 

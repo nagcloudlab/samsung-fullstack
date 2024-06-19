@@ -1,5 +1,11 @@
-<script setup>
+<script>
 import VotingBox from "./components/VotingBox.vue";
+export default {
+  name: "App",
+  components: {
+    VotingBox,
+  },
+};
 </script>
 
 <template>
@@ -9,7 +15,6 @@ import VotingBox from "./components/VotingBox.vue";
     <VotingBox />
   </div>
 </template>
-
 
 <style>
 </style>

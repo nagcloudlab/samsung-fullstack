@@ -1,10 +1,13 @@
-<script setup>
-defineProps({
-  items: {
-    type: Array,
-    required: true,
+<script>
+export default {
+  name: "VotingTable",
+  props: {
+    items: {
+      type: Array,
+      required: true,
+    },
   },
-});
+};
 </script>
 
 <template>
