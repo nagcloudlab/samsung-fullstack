@@ -1,0 +1,6 @@
+
+
+
+
+1. pinia  ( state manageemnt lib for vue-3)
+2. custom directives

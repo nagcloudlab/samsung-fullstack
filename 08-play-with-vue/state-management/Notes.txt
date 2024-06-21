@@ -1,0 +1,12 @@
+
+
+
+state management with vue 
+------------------------------------
+
+    - options API - data()
+    - composition API - ref() , reactive()
+    - vuex  
+    - pinia 
+    - dependency injection ( provide/inject)
+    - context
