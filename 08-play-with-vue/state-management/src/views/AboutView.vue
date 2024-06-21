@@ -1,6 +1,7 @@
 
 <script setup>
 import { useCounterStore } from "../stores/counterStore";
+import AsyncHelloWorld from "../components/AsyncComponent.vue";
 const store = useCounterStore();
 </script>
 
@@ -10,6 +11,8 @@ const store = useCounterStore();
     <button @click="store.increment(1)" style="font-size: 30px">
       {{ store.count }}
     </button>
+    <hr />
+    <AsyncHelloWorld />
   </div>
 </template>
 
