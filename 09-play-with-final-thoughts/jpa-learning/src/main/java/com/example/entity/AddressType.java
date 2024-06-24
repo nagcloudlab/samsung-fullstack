@@ -1,4 +1,4 @@
-package com.example;
+package com.example.entity;
 
 public enum AddressType {
     HOME,

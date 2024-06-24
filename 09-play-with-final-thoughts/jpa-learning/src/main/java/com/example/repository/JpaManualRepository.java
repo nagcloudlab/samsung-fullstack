@@ -6,12 +6,13 @@ import com.example.entity.Gender;
 import com.example.entity.Girl;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
-@Service
+@Repository
 public class JpaManualRepository {
 
     @PersistenceContext

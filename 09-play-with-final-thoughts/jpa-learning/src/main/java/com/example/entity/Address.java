@@ -1,4 +1,4 @@
-package com.example;
+package com.example.entity;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
